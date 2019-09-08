@@ -1,5 +1,3 @@
-module github.com/pasdam/go-project-template
+module github.com/pasdam/hello-world-go-qt
 
-replace github.com/pasdam/go-project-template/pkg => ./pkg
-
-go 1.13
+replace github.com/pasdam/hello-world-go-qt/pkg => ./pkg

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/pasdam/go-project-template/pkg/app"
+	"github.com/pasdam/hello-world-go-qt/pkg/app"
 )
 
 func main() {
