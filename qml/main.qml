@@ -1,43 +1,46 @@
-import QtQuick 2.7			//ApplicationWindow
-import QtQuick.Controls 2.1	//Dialog
+import QtQuick 2.10				//ListView
+import QtQuick.Controls 2.3		//Button
+import QtQuick.Layouts 1.3		//ColumnLayout
+import CustomQmlTypes 1.0		//CustomListModel
 
-ApplicationWindow {
-	id: window
+Item {
+	width: 250
+	height: 200
 
-	visible: true
-	title: "Hello QML Example"
-	minimumWidth: 250
-	minimumHeight: 200
+	ColumnLayout {
+		anchors.fill: parent
 
-	Column {
-		anchors.centerIn: parent
+		ListView {
+			id: listview
 
-		TextField {
-			id: input
-	
-			anchors.horizontalCenter: parent.horizontalCenter
-			placeholderText: "Write something ..."
+			Layout.fillWidth: true
+			Layout.fillHeight: true
+
+			model: CustomListModel{}
+			delegate: Text {
+				text: display
+			}
 		}
 
 		Button {
-			anchors.horizontalCenter: parent.horizontalCenter
-			text: "and click me!"
-			onClicked: dialog.open()
+			Layout.fillWidth: true
+
+			text: "remove last item"
+			onClicked: listview.model.remove()
 		}
-	}
 
-	Dialog {
-		id: dialog
+		Button {
+			Layout.fillWidth: true
 
-		x: (window.width - width) * 0.5
-		y: (window.height - height) * 0.5
+			text: "add new item"
+			onClicked: listview.model.add(["john", "doe"])
+		}
 
-		contentWidth: window.width * 0.5
-		contentHeight: window.height * 0.25
-		standardButtons: Dialog.Ok
+		Button {
+			Layout.fillWidth: true
 
-		contentItem: Label {
-			text: input.text
+			text: "edit last item"
+			onClicked: listview.model.edit("bob", "omb")
 		}
 	}
 }

@@ -16,6 +16,6 @@ require (
 	github.com/therecipe/qt/internal/binding/files/docs/5.12.0 v0.0.0-20190904000911-d6c64b2b9081 // indirect
 	github.com/therecipe/qt/internal/binding/files/docs/5.13.0 v0.0.0-20190904000911-d6c64b2b9081 // indirect
 	golang.org/x/crypto v0.0.0-20190909091759-094676da4a83 // indirect
-	golang.org/x/sys v0.0.0-20190909082730-f460065e899a // indirect
-	golang.org/x/tools v0.0.0-20190909030654-5b82db07426d // indirect
+	golang.org/x/sys v0.0.0-20190910064555-bbd175535a8b // indirect
+	golang.org/x/tools v0.0.0-20190910044552-dd2b5c81c578 // indirect
 )
